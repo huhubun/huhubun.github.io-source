@@ -39,7 +39,7 @@ jobs:
         path: site
 
     - name: Copy generated file to site
-      run: cp -r ./source/. ./site
+      run: cp -r ./source/dist/. ./site
         
     - name: push site
       run: |
