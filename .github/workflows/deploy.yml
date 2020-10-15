@@ -37,6 +37,7 @@ jobs:
       with:
         repository: huhubun/huhubun.github.io
         path: site
+        token: ${{ secrets.DEPLOY_KEY }}
 
     - name: Copy generated file to site
       run: cp -r ./source/dist/. ./site
@@ -44,8 +45,8 @@ jobs:
     - name: push site
       run: |
         cd ./site
-        git config user.name huhubun
-        git config user.email nongzc@outlook.com
+        git config user.name github-actions
+        git config user.email github-actions@github.com
         git add .
         current_time=`date '+%Y-%m-%d %H:%m:%S'`
         git commit -m "Update at $current_time"
