@@ -39,12 +39,14 @@ jobs:
         path: site
 
     - name: Copy generated file to site
-      run: cp -r ./source/dist/. ./site
+      run: |
+        cp -r ./source/dist/. ./site
+        ls -l ./site
         
     - name: push site
       run: |
+        cd ./site
         git config user.name huhubun
         git config user.email nongzc@outlook.com
-        cd ./site
         git commit
         git push
