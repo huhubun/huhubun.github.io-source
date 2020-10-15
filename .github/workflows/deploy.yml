@@ -1,0 +1,48 @@
+name: Deploy huhubun.github.io
+
+on: [push, pull_request]
+
+env:
+  NODE_JS_VERSION: 12
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ env.NODE_JS_VERSION }}
+        
+    - name: Verify Node.js
+      run: node --version
+
+    - name: Verify npm
+      run: npm -v
+      
+    - name: Checkout source
+      uses: actions/checkout@v2
+      with:
+        path: source
+            
+    - name: Generate
+      run: |
+        cd ./source
+        npm install
+        npm run build
+        npm run generate
+
+    - name: Checkout huhubun.github.io site
+      uses: actions/checkout@v2
+      with:
+        repository: huhubun/huhubun.github.io
+        path: site
+
+    - name: Copy generated file to site
+      run: cp -r ./source/. ./site
+        
+    - name: push site
+      run: |
+        cd ./site
+        git commit
+        git push
