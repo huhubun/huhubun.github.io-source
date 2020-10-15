@@ -43,6 +43,8 @@ jobs:
         
     - name: push site
       run: |
+        git config user.name huhubun
+        git config user.email nongzc@outlook.com
         cd ./site
         git commit
         git push
