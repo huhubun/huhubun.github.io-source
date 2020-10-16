@@ -1,90 +1,65 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <h1 style="color: red;">hello</h1>
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+  <div>
+    <site-card-group :data="sites" />
+    <social-card-group :data="socials" />
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
+  data: () => ({
+    sites: [
+      {
+        title: '博客',
+        src: './images/aura.jpg',
+        href: 'https://bun.plus/',
+        description:
+          '欢迎访问我的个人博客。这里的文章包含了前后端软件开发技术、精品软件推荐等内容。让我们一起学习、成长。'
+      },
+      {
+        title: '作品',
+        src: './images/snow_mountain.jpg',
+        href: 'https://bun.dev/',
+        description:
+          '这里有我开发的开源小作品，如果能帮到你那真是太好了。如果遇上bug别忘了反馈，若是能贡献代码那更是太棒了！'
+      },
+      {
+        title: '关于我',
+        src: './images/danhuang.jpg',
+        href: 'https://nzc.me/',
+        description: '如果对我感兴趣，可以进一步了解……'
+      }
+    ],
+    socials: [
+      {
+        title: '新浪微博',
+        name: '@呼呼小笼包',
+        color: 'red',
+        icon: 'mdi-sina-weibo',
+        href: 'https://weibo.com/201274727'
+      },
+      {
+        title: '微信公众号',
+        name: 'bundev',
+        color: 'green',
+        icon: 'mdi-wechat',
+        href: './images/bundev_wechat_qr.png'
+      },
+      {
+        title: 'GitHub',
+        name: 'huhubun',
+        color: 'rgb(43,49,55)',
+        icon: 'mdi-github',
+        href: 'https://github.com/huhubun'
+      },
+      {
+        title: 'LOFTER',
+        name: '小笼包在这里',
+        color: 'light-green darken-3',
+        icon: 'mdi-alpha-l-circle-outline',
+        href: 'https://huhubun.lofter.com/'
+      }
+    ]
+  })
 }
 </script>
