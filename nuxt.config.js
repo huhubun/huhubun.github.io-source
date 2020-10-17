@@ -6,15 +6,17 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - huhubun.github.io',
-    title: 'huhubun.github.io',
+    titleTemplate: '%s - 呼呼小笼包的主页 huhubun.com',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      // 解决 Google 字体国内访问慢的问题
+      { rel: 'stylesheet', href: 'https://fonts.loli.net/css?family=Roboto:100,300,400,500,700,900&display=swap' },
+      // 因为 defaultAssets 设为了 false，这里需要手动引入 Material Design Icons
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css' }
     ]
   },
 
@@ -56,6 +58,9 @@ export default {
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    // 关闭默认字体，因为默认字体总是从 Google 获取字体，国内访问很慢，改为在 `head` 里引入国内源的 Roboto 字体
+    // https://github.com/nuxt-community/vuetify-module#defaultassets
+    defaultAssets: false,
     theme: {
       dark: false,
       themes: {

@@ -7,6 +7,25 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: '首页',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '这里是呼呼小笼包的主页，可以方便的进入由呼呼小笼包撰写的博客站点、开源程序或是进一步了解作者。'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            '呼呼小笼包,huhubun,bun,bun.dev,bun.plus,bun.dev,nzc.me,huhubun.com'
+        }
+      ]
+    }
+  },
   data: () => ({
     sites: [
       {

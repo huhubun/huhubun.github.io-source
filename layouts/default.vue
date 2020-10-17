@@ -42,8 +42,9 @@
             v-bind:key="`toolbar_item_${i}_btn`"
             :to="items[i].to"
             :href="items[i].href"
-            >{{ items[i].title }}</v-btn
           >
+            {{ items[i].title }}
+          </v-btn>
           <v-divider vertical :key="`toolbar_item_${i}_divider`"></v-divider>
         </template>
       </v-toolbar-items>
