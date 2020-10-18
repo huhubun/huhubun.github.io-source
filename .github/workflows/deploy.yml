@@ -42,7 +42,7 @@ jobs:
     - name: Copy generated file to site
       run: cp -r ./source/dist/. ./site
         
-    - name: push site
+    - name: Push site
       run: |
         cd ./site
         git config user.name github-actions
