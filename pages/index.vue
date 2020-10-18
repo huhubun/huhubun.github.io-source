@@ -15,7 +15,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            '这里是呼呼小笼包的主页，可以方便的进入由呼呼小笼包撰写的博客站点、开源程序或是进一步了解作者。'
+            '这里是呼呼小笼包的导航页面，可以方便的进入由呼呼小笼包撰写的博客站点、开源程序或是进一步了解作者。'
         },
         {
           hid: 'keywords',

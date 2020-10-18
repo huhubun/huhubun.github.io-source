@@ -78,7 +78,7 @@ export default {
           href: 'https://nzc.me'
         }
       ],
-      title: '呼呼小笼包的主页'
+      title: '呼呼小笼包的导航'
     }
   }
 }
