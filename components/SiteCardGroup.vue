@@ -3,8 +3,9 @@
     <v-col
       v-for="site in data"
       :key="site.title"
+      cols="12"
       lg="4"
-      sm="6"
+      md="4"
       xs="12"
     >
       <v-card hover :href="site.href">

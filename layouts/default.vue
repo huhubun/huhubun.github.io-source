@@ -25,7 +25,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" app>
+    <v-app-bar :clipped-left="clipped" flat app>
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
         class="hidden-sm-and-up"
@@ -35,7 +35,6 @@
       <v-spacer />
 
       <v-toolbar-items class="hidden-xs-only">
-        <v-divider vertical></v-divider>
         <template v-for="(item, i) in items">
           <v-btn
             text
@@ -45,7 +44,6 @@
           >
             {{ items[i].title }}
           </v-btn>
-          <v-divider vertical :key="`toolbar_item_${i}_divider`"></v-divider>
         </template>
       </v-toolbar-items>
     </v-app-bar>
