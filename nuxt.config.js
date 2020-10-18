@@ -13,6 +13,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', href: '/icon-512x512.png' },
       // 解决 Google 字体国内访问慢的问题
       { rel: 'stylesheet', href: 'https://fonts.loli.net/css?family=Roboto:100,300,400,500,700,900&display=swap' },
       // 因为 defaultAssets 设为了 false，这里需要手动引入 Material Design Icons
