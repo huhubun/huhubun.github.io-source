@@ -54,8 +54,10 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }} huhubun</span>
+    <v-footer absolute app>
+      <v-col class="text-center">
+        <span>&copy; {{ new Date().getFullYear() }} huhubun</span>
+      </v-col>
     </v-footer>
   </v-app>
 </template>
@@ -66,7 +68,6 @@ export default {
     return {
       clipped: true,
       drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-home-outline',
