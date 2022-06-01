@@ -21,7 +21,7 @@ export default {
           hid: 'keywords',
           name: 'keywords',
           content:
-            '呼呼小笼包,huhubun,bun,bun.dev,bun.plus,bun.dev,nzc.me,huhubun.com'
+            '呼呼小笼包,huhubun,bun,bun.plus,dev.bun.plus,nzc.me,huhubun.com'
         }
       ]
     }
@@ -38,7 +38,7 @@ export default {
       {
         title: '作品',
         src: './images/snow_mountain.jpg',
-        href: 'https://bun.dev/',
+        href: 'https://dev.bun.plus/',
         description:
           '这里有我开发的开源小作品，如果能帮到你那真是太好了。如果遇上bug别忘了反馈，若是能贡献代码那更是太棒了！'
       },
